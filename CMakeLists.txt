@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.8)
 project(nav)
 
-# author: Manoj
+# author: Pratham
 # Default to C++17
 if(NOT CMAKE_CXX_STANDARD)
     set(CMAKE_CXX_STANDARD 17)
@@ -66,6 +66,15 @@ install(TARGETS
     DESTINATION lib/${PROJECT_NAME})
 
 install(PROGRAMS
+    scripts/path_smoother.py
+    scripts/obstacle_avoider.py
+    scripts/mpc_tracker.py
     DESTINATION lib/${PROJECT_NAME})
+
+install(DIRECTORY launch/
+    DESTINATION share/${PROJECT_NAME}/launch)
+
+install(DIRECTORY waypoints/
+  DESTINATION share/${PROJECT_NAME}/waypoints)
 
 ament_package()

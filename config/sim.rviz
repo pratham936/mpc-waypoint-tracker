@@ -90,33 +90,18 @@ Visualization Manager:
                 {}
       Update Interval: 0
       Value: true
-    - Alpha: 1
-      Buffer Length: 1
-      Class: rviz_default_plugins/Path
-      Color: 224; 27; 36
+    - Class: rviz_default_plugins/MarkerArray
       Enabled: true
-      Head Diameter: 0.30000001192092896
-      Head Length: 0.20000000298023224
-      Length: 0.30000001192092896
-      Line Style: Lines
-      Line Width: 0.029999999329447746
-      Name: waypoints
-      Offset:
-        X: 0
-        Y: 0
-        Z: 0
-      Pose Color: 255; 85; 255
-      Pose Style: None
-      Radius: 0.029999999329447746
-      Shaft Diameter: 0.10000000149011612
-      Shaft Length: 0.10000000149011612
+      Name: csv_waypoints
+      Namespaces:
+        {}
       Topic:
         Depth: 5
-        Durability Policy: Volatile
+        Durability Policy: Transient Local
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /waypoints
+        Value: /viz/csv_waypoints
       Value: true
     - Alpha: 1
       Buffer Length: 1
@@ -140,26 +125,168 @@ Visualization Manager:
       Shaft Length: 0.029999999329447746
       Topic:
         Depth: 5
-        Durability Policy: Volatile
+        Durability Policy: Transient Local
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
         Value: /path
       Value: true
     - Alpha: 1
-      Class: rviz_default_plugins/PointStamped
-      Color: 204; 41; 204
+      Buffer Length: 1
+      Class: rviz_default_plugins/Path
+      Color: 0; 170; 255
       Enabled: true
-      History Length: 1
-      Name: lookahead_point
-      Radius: 0.20000000298023224
+      Head Diameter: 0.05
+      Head Length: 0.05
+      Length: 0.30000001192092896
+      Line Style: Billboards
+      Line Width: 0.04
+      Name: path_local (MPC tracks)
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 0; 170; 255
+      Pose Style: None
+      Radius: 0.029999999329447746
+      Shaft Diameter: 0.03
+      Shaft Length: 0.03
+      Topic:
+        Depth: 5
+        Durability Policy: Transient Local
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /path_local
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz_default_plugins/Path
+      Color: 255; 105; 180
+      Enabled: false
+      Head Diameter: 0.04
+      Head Length: 0.04
+      Length: 0.30000001192092896
+      Line Style: Lines
+      Line Width: 0.025
+      Name: mpc_predicted
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 105; 180
+      Pose Style: None
+      Radius: 0.02
+      Shaft Diameter: 0.02
+      Shaft Length: 0.02
       Topic:
         Depth: 5
         Durability Policy: Volatile
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /pure_pursuit/lookahead_point
+        Value: /viz/mpc_predicted
+      Value: false
+    - Class: rviz_default_plugins/Marker
+      Enabled: true
+      Name: mpc_target
+      Namespaces:
+        {}
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /viz/mpc_target
+      Value: true
+    - Alpha: 1
+      Buffer Length: 1
+      Class: rviz_default_plugins/Path
+      Color: 255; 170; 0
+      Enabled: true
+      Head Diameter: 0.07
+      Head Length: 0.07
+      Length: 0.30000001192092896
+      Line Style: Billboards
+      Line Width: 0.06
+      Name: detour_path
+      Offset:
+        X: 0
+        Y: 0
+        Z: 0
+      Pose Color: 255; 170; 0
+      Pose Style: None
+      Radius: 0.029999999329447746
+      Shaft Diameter: 0.04
+      Shaft Length: 0.04
+      Topic:
+        Depth: 5
+        Durability Policy: Transient Local
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /viz/detour_path
+      Value: true
+    - Class: rviz_default_plugins/MarkerArray
+      Enabled: true
+      Name: obstacles
+      Namespaces:
+        {}
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /viz/obstacles
+      Value: true
+    - Class: rviz_default_plugins/MarkerArray
+      Enabled: true
+      Name: detour_waypoints
+      Namespaces:
+        {}
+      Topic:
+        Depth: 5
+        Durability Policy: Transient Local
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Reliable
+        Value: /viz/detour_waypoints
+      Value: true
+    - Alpha: 1
+      Autocompute Intensity Bounds: true
+      Autocompute Value Bounds:
+        Max Value: 10
+        Min Value: -10
+        Value: true
+      Axis: Z
+      Channel Name: intensity
+      Class: rviz_default_plugins/LaserScan
+      Color: 255; 255; 255
+      Color Transformer: FlatColor
+      Decay Time: 0
+      Enabled: true
+      Invert Rainbow: false
+      Max Color: 255; 255; 255
+      Max Intensity: 4096
+      Min Color: 0; 0; 0
+      Min Intensity: 0
+      Name: LaserScan
+      Position Transformer: XYZ
+      Selectable: true
+      Size (Pixels): 3
+      Size (m): 0.04
+      Style: Spheres
+      Topic:
+        Depth: 5
+        Durability Policy: Volatile
+        Filter size: 10
+        History Policy: Keep Last
+        Reliability Policy: Best Effort
+        Value: /scan
+      Use Fixed Frame: true
+      Use rainbow: true
       Value: true
   Enabled: true
   Global Options:
