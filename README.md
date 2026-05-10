@@ -1,6 +1,6 @@
 # Autonomous Navigation with Regulated Pure Pursuit
 
-A ROS2-based navigation stack implementing path smoothing and regulated pure pursuit control for differential drive robots in constrained environments. [Video]([https://drive.google.com/file/d/17OE4Cf4g9UPwNrmvYiQqMd2OCQQHhMXT/view?usp=sharing](https://drive.google.com/file/d/1CESRBhaxAiyDw4Dapy0Lzjpnj3Ipr7lk/view))
+A ROS2-based navigation stack implementing path smoothing and regulated pure pursuit control for differential drive robots in constrained environments. [Video]([https://drive.google.com/file/d/1CESRBhaxAiyDw4Dapy0Lzjpnj3Ipr7lk/view])
 
 ## Overview
 
